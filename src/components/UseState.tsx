@@ -1,17 +1,28 @@
-import React from 'react'
+import React from 'react';
 
-const UseState = () => {
+interface Props {
+    name: string
+}
+
+const UseState = ({name}: Props) => {
+
+    const [error, setError] = React.useState<boolean>(false);
+
     return (
         <>
             <h2>
-                Eliminar UseState
+                Eliminar {name}
             </h2>
             <p>
                 Por favor, ingresa el código de seguridad
             </p>
 
-            <input type="text" placeholder="Codigo de seguridad" />
-            <button>
+            {error && <p style={{color: 'red'}}>Código incorrecto</p>}
+
+            <input type="text" placeholder="Codigo de seguridad"/>
+            <button
+                onClick={() => setError(!error)}
+            >
                 Comprobar
             </button>
         </>

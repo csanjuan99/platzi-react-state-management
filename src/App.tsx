@@ -6,9 +6,9 @@ function App() {
 
   return (
     <>
-        <UseState/>
+        <UseState name="useState"/>
         <hr/>
-        <ClassState/>
+        <ClassState name="classState"/>
     </>
   )
 }
